@@ -1,0 +1,481 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Invest & Grow Your Wealth | Modern Platform";
+    Layout = null; // Standalone layout for direct copy-paste into Index.cshtml
+}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            groww: {
+                                50: '#fff1f2',
+                                100: '#ffe4e6',
+                                500: '#f43f5e',
+                                600: '#e11d48',
+                                700: '#be123c',
+                                900: '#881337',
+                                dark: '#0f172a',
+                                card: '#1e293b'
+                            }
+                        }
+                    }
+                }
+            }
+    </script>
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+            body {
+                font-family: 'Inter', sans-serif;
+            }
+
+            .hero-gradient {
+                background: radial-gradient(circle at 50% 20%, rgba(244, 63, 94, 0.12) 0%, rgba(15, 23, 42, 0) 70%);
+            }
+
+            .glow-effect {
+                box-shadow: 0 0 40px -10px rgba(244, 63, 94, 0.25);
+            }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-rose-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-600 to-rose-400 flex items-center justify-center shadow-lg shadow-rose-500/30">
+                    <i class="fa-solid fa-arrow-trend-up text-white text-lg"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tight text-white">Groww<span class="text-rose-500">Next</span></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#products" class="hover:text-rose-400 transition">Products</a>
+                <a href="#features" class="hover:text-rose-400 transition">Features</a>
+                <a href="#security" class="hover:text-rose-400 transition">Security</a>
+                <a href="#pricing" class="hover:text-rose-400 transition">Pricing</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center space-x-4">
+                <a href="#login" class="hidden sm:inline-flex text-sm font-semibold text-slate-300 hover:text-white px-4 py-2 transition">Log In</a>
+                <a href="#getstarted" class="bg-rose-600 hover:bg-rose-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition shadow-lg shadow-rose-600/20 active:scale-95">Get Started Free</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative hero-gradient pt-16 pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Left Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-rose-950/80 border border-rose-500/30 px-3 py-1.5 rounded-full text-rose-400 text-xs font-medium">
+                        <span class="flex h-2 w-2 rounded-full bg-rose-500 animate-pulse"></span>
+                        <span>Trusted by 40M+ investors & tech pioneers</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        One stop solution for your stock and MF & <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-red-400">F&O Seamlessly.</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0">
+                        Zero account opening fees. Zero AMC. Experience blazing fast execution, intuitive analytics, and institutional-grade portfolio intelligence built for developers and traders.
+                    </p>
+
+                    <!-- CTA Form / Quick Signup -->
+                    <div class="max-w-md mx-auto lg:mx-0 pt-2">
+                        <form onsubmit="handleSignup(event)" class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" id="signupEmail" required placeholder="Enter your email address" class="bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-rose-500 flex-grow shadow-inner">
+                            <button type="submit" class="bg-rose-600 hover:bg-rose-500 text-white font-semibold px-6 py-3 rounded-xl transition shadow-lg shadow-rose-600/25 flex items-center justify-center space-x-2">
+                                <span>Explore Now</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </form>
+                        <p class="text-xs text-slate-500 mt-2">No credit card required. Instant onboarding in under 3 minutes.</p>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-800/80 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-2xl font-bold text-white">₹10K Cr+</div>
+                            <div class="text-xs text-slate-400">Daily Volume</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">0%</div>
+                            <div class="text-xs text-slate-400">Brokerage on Equity</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">4.8★</div>
+                            <div class="text-xs text-slate-400">App Rating</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Card / Live Mockup -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 glow-effect relative backdrop-blur-xl">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-rose-500/10 flex items-center justify-center text-rose-400 font-bold">N</div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-white">NIFTY 50</h4>
+                                    <span class="text-xs text-slate-400">National Index</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-bold text-white text-sm">22,450.20</div>
+                                <div class="text-xs text-rose-400 font-medium">+184.50 (+0.83%)</div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Chart Mockup -->
+                        <div class="py-6">
+                            <div class="h-36 w-full flex items-end justify-between gap-1 pt-4">
+                                <div class="w-1/12 bg-rose-500/20 hover:bg-rose-500 rounded-t transition h-[40%]"></div>
+                                <div class="w-1/12 bg-rose-500/20 hover:bg-rose-500 rounded-t transition h-[55%]"></div>
+                                <div class="w-1/12 bg-rose-500/20 hover:bg-rose-500 rounded-t transition h-[48%]"></div>
+                                <div class="w-1/12 bg-rose-500/30 hover:bg-rose-500 rounded-t transition h-[65%]"></div>
+                                <div class="w-1/12 bg-rose-500/40 hover:bg-rose-500 rounded-t transition h-[60%]"></div>
+                                <div class="w-1/12 bg-rose-500/50 hover:bg-rose-500 rounded-t transition h-[75%]"></div>
+                                <div class="w-1/12 bg-rose-500/60 hover:bg-rose-500 rounded-t transition h-[70%]"></div>
+                                <div class="w-1/12 bg-rose-500/70 hover:bg-rose-500 rounded-t transition h-[85%]"></div>
+                                <div class="w-1/12 bg-rose-500/80 hover:bg-rose-500 rounded-t transition h-[80%]"></div>
+                                <div class="w-1/12 bg-rose-600 hover:bg-rose-400 rounded-t transition h-[95%]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Top Gainers List Inside Card -->
+                        <div class="space-y-3 pt-2">
+                            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Trending Assets</div>
+                            <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950/60 border border-slate-800/80">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-7 h-7 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center text-xs font-bold">RELI</div>
+                                    <span class="text-xs font-medium text-white">Reliance Industries</span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs font-semibold text-white">₹2,980.10</div>
+                                    <div class="text-[10px] text-rose-400">+2.4%</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950/60 border border-slate-800/80">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-7 h-7 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center text-xs font-bold">TCS</div>
+                                    <span class="text-xs font-medium text-white">Tata Consultancy</span>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs font-semibold text-white">₹4,120.50</div>
+                                    <div class="text-[10px] text-rose-400">+1.8%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-20 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">All Your Financial Needs in One Hub</h2>
+                <p class="text-slate-400 text-base">Whether you are building a long-term retirement fund or executing high-speed derivatives trades, we've got you covered.</p>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Stocks Card -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-rose-500/50 transition duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Stocks & Equities</h3>
+                    <p class="text-slate-400 text-sm mb-6">Invest in over 5,000+ listed stocks with zero commission on equity delivery orders.</p>
+                    <ul class="space-y-2 text-xs text-slate-300 mb-6">
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500"></i><span>Advanced Trading Charts</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500"></i><span>Instant IPO Applications</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500"></i><span>GTT Orders & Stop Loss</span></li>
+                    </ul>
+                    <a href="#stocks" class="text-rose-400 text-sm font-semibold inline-flex items-center space-x-1 hover:text-rose-300">
+                        <span>Explore Stocks</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Mutual Funds Card -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-rose-500/50 transition duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Mutual Funds & SIP</h3>
+                    <p class="text-slate-400 text-sm mb-6">Invest in direct mutual funds with 0% commission. Save up to 1% extra returns yearly.</p>
+                    <ul class="space-y-2 text-xs text-slate-300 mb-6">
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500"></i><span>Automated Weekly/Monthly SIP</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500"></i><span>Tax Saving ELSS Funds</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500"></i><span>Free Portfolio Analysis</span></li>
+                    </ul>
+                    <a href="#mutualfunds" class="text-rose-400 text-sm font-semibold inline-flex items-center space-x-1 hover:text-rose-300">
+                        <span>Explore Mutual Funds</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- F&O Card -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-rose-500/50 transition duration-300 group">
+                    <div class="w-14 h-14 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Futures & Options</h3>
+                    <p class="text-slate-400 text-sm mb-6">Blazing fast derivative execution with flat ₹20 per executed order pricing model.</p>
+                    <ul class="space-y-2 text-xs text-slate-300 mb-6">
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500"></i><span>Option Chain Analysis</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500"></i><span>Pledge Shares for Margin</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-rose-500"></i><span>Basket Order Execution</span></li>
+                    </ul>
+                    <a href="#fno" class="text-rose-400 text-sm font-semibold inline-flex items-center space-x-1 hover:text-rose-300">
+                        <span>Explore F&O</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-rose-950 border border-rose-500/30 px-3 py-1 rounded-full text-rose-400 text-xs font-semibold">
+                    <span>Why Choose GrowwNext</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Built for speed, backed by bulletproof reliability.</h2>
+                <p class="text-slate-400 text-base">Engineered with ASP.NET Core Razor Pages architecture underneath, ensuring lightning-fast page renders and high security compliance.</p>
+
+                <div class="space-y-4 pt-4">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Bank-Grade 256-bit Encryption</h4>
+                            <p class="text-slate-400 text-sm">Your data and investments are safeguarded by advanced cryptographic protocols.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-bolt-lightning"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Sub-millisecond Order Routing</h4>
+                            <p class="text-slate-400 text-sm">Never miss a trade with optimized low-latency servers placed right next to exchanges.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">24/7 Dedicated Support</h4>
+                            <p class="text-slate-400 text-sm">Expert financial advisors and tech engineers ready to assist you round the clock.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Demo Box -->
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 relative">
+                <div class="absolute -top-4 -right-4 bg-rose-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">Live ASP.NET Ready</div>
+                <h3 class="text-xl font-bold text-white mb-4">Calculate Your Wealth Growth</h3>
+
+                <div class="space-y-6 pt-2">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-slate-400">Monthly Investment</span>
+                            <span class="font-bold text-white" id="invDisplay">₹15,000</span>
+                        </div>
+                        <input type="range" min="1000" max="100000" step="1000" value="15000" id="monthlyInv" oninput="calculateInvestment()" class="w-full accent-rose-600 bg-slate-800 h-2 rounded-lg cursor-pointer">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-slate-400">Time Horizon</span>
+                            <span class="font-bold text-white" id="timeDisplay">10 Years</span>
+                        </div>
+                        <input type="range" min="1" max="30" step="1" value="10" id="timeHorizon" oninput="calculateInvestment()" class="w-full accent-rose-600 bg-slate-800 h-2 rounded-lg cursor-pointer">
+                    </div>
+
+                    <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-400">Invested Amount</span>
+                            <span class="font-semibold text-white" id="totalInvested">₹18,00,000</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-400">Est. Returns (14% p.a.)</span>
+                            <span class="font-semibold text-rose-400" id="totalReturns">₹30,45,210</span>
+                        </div>
+                        <div class="pt-3 border-t border-slate-800 flex justify-between items-center">
+                            <span class="text-sm font-bold text-white">Total Portfolio Value</span>
+                            <span class="text-2xl font-black text-rose-400" id="totalValue">₹48,45,210</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="security" class="py-20 bg-slate-900/30 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Trusted, Regulated & Secure</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto mb-12 text-sm">We adhere to stringent financial regulations and maintain top-tier industry certifications for your absolute peace of mind.</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl flex flex-col items-center justify-center space-y-3">
+                    <i class="fa-solid fa-lock text-3xl text-rose-500"></i>
+                    <span class="font-bold text-white text-sm">SEBI Compliant</span>
+                    <span class="text-xs text-slate-500">Fully Registered Broker</span>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl flex flex-col items-center justify-center space-y-3">
+                    <i class="fa-solid fa-shield text-3xl text-rose-500"></i>
+                    <span class="font-bold text-white text-sm">CDSL Depository</span>
+                    <span class="text-xs text-slate-500">Secure Demat Holdings</span>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl flex flex-col items-center justify-center space-y-3">
+                    <i class="fa-solid fa-user-shield text-3xl text-rose-500"></i>
+                    <span class="font-bold text-white text-sm">2FA Biometric</span>
+                    <span class="text-xs text-slate-500">Advanced Account Guard</span>
+                </div>
+                <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl flex flex-col items-center justify-center space-y-3">
+                    <i class="fa-solid fa-server text-3xl text-rose-500"></i>
+                    <span class="font-bold text-white text-sm">99.99% Uptime</span>
+                    <span class="text-xs text-slate-500">High-Availability Cloud</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 border-t border-slate-800 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-5 gap-8 pb-12 border-b border-slate-800">
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg bg-rose-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+                        <span class="text-xl font-black text-white">Groww<span class="text-rose-500">Next</span></span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+                        GrowwNext is a modern financial platform built on ASP.NET Razor Pages. Designed for modern investors seeking speed, transparency, and superior UI.
+                    </p>
+                    <div class="flex space-x-4 text-slate-400 text-sm">
+                        <a href="#" class="hover:text-rose-400 transition"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="hover:text-rose-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-rose-400 transition"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="hover:text-rose-400 transition"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold text-sm mb-4">Products</h5>
+                    <ul class="space-y-2.5 text-xs text-slate-400">
+                        <li><a href="#" class="hover:text-white transition">Stocks</a></li>
+                        <li><a href="#" class="hover:text-white transition">Mutual Funds</a></li>
+                        <li><a href="#" class="hover:text-white transition">Futures & Options</a></li>
+                        <li><a href="#" class="hover:text-white transition">IPOs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold text-sm mb-4">Company</h5>
+                    <ul class="space-y-2.5 text-xs text-slate-400">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Press & Media</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-semibold text-sm mb-4">Legal & Privacy</h5>
+                    <ul class="space-y-2.5 text-xs text-slate-400">
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition">Disclosure</a></li>
+                        <li><a href="#" class="hover:text-white transition">SEBI Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+                <p>&copy; 2026 GrowwNext Razor Pages Project. All rights reserved.</p>
+                <p class="mt-4 sm:mt-0">Designed with Razor Pages & Tailwind CSS</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+            function calculateInvestment() {
+                const monthly = parseFloat(document.getElementById('monthlyInv').value);
+                const years = parseInt(document.getElementById('timeHorizon').value);
+
+                document.getElementById('invDisplay').innerText = '₹' + monthly.toLocaleString('en-IN');
+                document.getElementById('timeDisplay').innerText = years + (years === 1 ? ' Year' : ' Years');
+
+                const months = years * 12;
+                const totalInv = monthly * months;
+                document.getElementById('totalInvested').innerText = '₹' + Math.round(totalInv).toLocaleString('en-IN');
+
+                // Compound interest calculation assuming 14% annual return compounded monthly
+                const rateMonthly = 0.14 / 12;
+                let futureValue = 0;
+                if (rateMonthly > 0) {
+                    futureValue = monthly * ((Math.pow(1 + rateMonthly, months) - 1) / rateMonthly) * (1 + rateMonthly);
+                } else {
+                    futureValue = totalInv;
+                }
+
+                const estReturns = futureValue - totalInv;
+                document.getElementById('totalReturns').innerText = '₹' + Math.round(estReturns > 0 ? estReturns : 0).toLocaleString('en-IN');
+                document.getElementById('totalValue').innerText = '₹' + Math.round(futureValue > 0 ? futureValue : totalInv).toLocaleString('en-IN');
+            }
+
+            function handleSignup(e) {
+                e.preventDefault();
+                const email = document.getElementById('signupEmail').value;
+                if (email) {
+                    const formContainer = e.target;
+                    formContainer.innerHTML = `
+                        <div class="bg-rose-950 border border-rose-500/50 p-4 rounded-xl text-rose-400 text-sm font-medium flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-lg"></i>
+                            <span>Thanks for enquiring about the Groww page.</span>
+                        </div>
+                    `;
+                }
+            }
+
+            // Initialize calculation on load
+            window.onload = function() {
+                calculateInvestment();
+            };
+    </script>
+</body>
+</html>

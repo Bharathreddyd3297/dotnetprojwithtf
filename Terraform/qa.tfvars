@@ -1,0 +1,5 @@
+environment = "qa"
+rgname = "grow-qarg"
+asp = "grow-qa-asp"
+webapp = "growwwebappqa001"
+location = "canadacentral"

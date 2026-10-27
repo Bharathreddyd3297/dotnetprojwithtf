@@ -1,0 +1,5 @@
+environment = "dev"
+rgname = "grow-devrg"
+asp = "grow-dev-asp"
+webapp = "growwwebappdev001"
+location = "canadacentral"
